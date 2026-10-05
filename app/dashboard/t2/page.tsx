@@ -182,9 +182,9 @@ export default function Tier2RouteSelectPage() {
                       type="text"
                       value={bypassToken}
                       onChange={(e) => setBypassToken(e.target.value)}
-                      placeholder="ENTER TIER-2 KEY..."
+                      placeholder=""
                       required
-                      className="w-full bg-slate-950 border border-slate-800 rounded px-3 py-2 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-rose-500 uppercase tracking-wider"
+                      className="w-full bg-slate-950 border border-slate-800 rounded px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-rose-500 uppercase tracking-wider"
                     />
 
                     <button

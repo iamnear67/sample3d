@@ -143,9 +143,9 @@ export default function Tier4DashboardPage() {
                       type="text"
                       value={tokenInput}
                       onChange={(e) => setTokenInput(e.target.value)}
-                      placeholder="e.g. CONTAINMENT_..."
+                      placeholder=""
                       required
-                      className="w-full bg-slate-950 border border-slate-800 rounded px-3.5 py-2.5 text-xs sm:text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 uppercase tracking-wider"
+                      className="w-full bg-slate-950 border border-slate-800 rounded px-3.5 py-2.5 text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-cyan-500 uppercase tracking-wider"
                     />
                   </div>
 

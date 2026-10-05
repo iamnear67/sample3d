@@ -140,9 +140,9 @@ export default function Tier3DashboardPage() {
                       type="text"
                       value={sequenceInput}
                       onChange={(e) => setSequenceInput(e.target.value)}
-                      placeholder="e.g. 7749-REACTOR-..."
+                      placeholder=""
                       required
-                      className="w-full bg-slate-950 border border-slate-800 rounded px-3.5 py-2.5 text-xs sm:text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-amber-500 uppercase tracking-wider"
+                      className="w-full bg-slate-950 border border-slate-800 rounded px-3.5 py-2.5 text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-amber-500 uppercase tracking-wider"
                     />
                   </div>
 

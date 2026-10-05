@@ -88,9 +88,9 @@ export default function LoginPage() {
                 type="text"
                 value={employeeId}
                 onChange={(e) => setEmployeeId(e.target.value)}
-                placeholder="@solomonhiggs"
+                placeholder=""
                 required
-                className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 focus:outline-none focus:ring-0 focus:border-cyan-500 placeholder:text-slate-600 font-mono shadow-none"
+                className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 focus:outline-none focus:ring-0 focus:border-cyan-500 font-mono shadow-none"
               />
             </div>
 
@@ -101,9 +101,9 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"}
                   value={passphrase}
                   onChange={(e) => setPassphrase(e.target.value)}
-                  placeholder="@fryit123"
+                  placeholder=""
                   required
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 focus:outline-none focus:ring-0 focus:border-cyan-500 placeholder:text-slate-600 pr-10 font-mono shadow-none"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 focus:outline-none focus:ring-0 focus:border-cyan-500 pr-10 font-mono shadow-none"
                 />
                 <button
                   type="button"
