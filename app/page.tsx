@@ -81,15 +81,33 @@ export default function ProjectorCluePage() {
 
       {/* Main Tactical Projection Briefing */}
       <section className="relative z-10 my-auto py-8 sm:py-12 max-w-6xl mx-auto w-full">
+        {/* Cinematic Projected System Notice Card */}
+        <div className="bg-slate-900/80 border-2 border-cyan-500/70 rounded-2xl p-6 sm:p-10 mb-8 backdrop-blur-md shadow-2xl relative overflow-hidden text-center space-y-4">
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+          <div className="text-xs sm:text-sm uppercase tracking-widest text-cyan-400 font-extrabold">
+            ORBITAL CO. // INTERNAL SYSTEM NOTICE
+          </div>
+          <div className="text-2xl sm:text-4xl md:text-5xl font-black text-rose-500 tracking-tight flex items-center justify-center gap-3">
+            <ShieldAlert className="h-8 w-8 sm:h-12 sm:w-12 text-rose-500 animate-pulse" />
+            <span>PROJECT ECLIPSE &bull; CONNECTION LOST</span>
+          </div>
+          <div className="max-w-2xl mx-auto text-sm sm:text-lg text-slate-200 font-medium leading-relaxed">
+            &ldquo;If you are seeing this, the system has already noticed you.&rdquo;
+          </div>
+          <div className="inline-block bg-cyan-950/70 border border-cyan-500/80 text-cyan-300 font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm tracking-widest uppercase animate-pulse">
+            START HERE // TERMINAL ADDRESS VECTOR BELOW
+          </div>
+        </div>
+
         {/* Urgent Status Banner */}
         <div className="bg-rose-950/30 border border-rose-900/70 rounded-lg p-4 sm:p-5 mb-8 backdrop-blur-sm flex items-start gap-4">
           <div className="p-2 rounded bg-rose-900/30 border border-rose-800 text-rose-400 shrink-0">
-            <ShieldAlert className="h-6 w-6" />
+            <Activity className="h-6 w-6 text-rose-400" />
           </div>
           <div className="space-y-1">
             <div className="flex items-center gap-3 flex-wrap">
               <span className="text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-950/60 px-2 py-0.5 rounded border border-rose-800">
-                CRITICAL ALERT // CLASS-4 RUNAWAY
+                CONTAINMENT BREACH // SECTOR 4 OVERLAY
               </span>
               <span className="text-xs text-slate-400">INCIDENT ID: #ECL-882-BREACH</span>
             </div>

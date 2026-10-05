@@ -426,6 +426,58 @@ export default function WinConditionCheckerPage() {
                 </div>
               </div>
 
+              {/* PUZZLE 21: FINAL THREE-PART CLUE (Pitchable Placeholders) */}
+              <div className="bg-slate-950 border border-emerald-500/80 rounded-xl p-5 text-left space-y-3 font-mono">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                    <Sparkles className="h-3.5 w-3.5" /> RECOVERED EXFILTRATION INTEL // THREE-PART ARTIFACT
+                  </span>
+                  <span className="text-[10px] text-amber-400 font-bold bg-amber-950/60 border border-amber-800 px-2 py-0.5 rounded">
+                    PLACEHOLDER CREDENTIALS
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate-300 font-sans leading-relaxed">
+                  The mathematical resolution of the WCC containment seed has decrypted three critical coordinates for the final off-site investigation:
+                </p>
+
+                <div className="space-y-2 text-xs">
+                  <div className="p-2.5 rounded bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <span className="text-slate-500 text-[10px] block">01 // TARGET ACCOUNT EMAIL</span>
+                      <span className="text-emerald-300 font-bold tracking-wide">
+                        vance.containment55@gmail.com
+                      </span>
+                    </div>
+                    <span className="text-[10px] text-slate-500 font-mono">FICTIONAL</span>
+                  </div>
+
+                  <div className="p-2.5 rounded bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <span className="text-slate-500 text-[10px] block">02 // SECURE PASSPHRASE</span>
+                      <span className="text-amber-300 font-bold tracking-wide">
+                        [FINAL PASSWORD — TBD]
+                      </span>
+                    </div>
+                    <span className="text-[10px] text-amber-500 font-mono">PLACEHOLDER</span>
+                  </div>
+
+                  <div className="p-2.5 rounded bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <span className="text-slate-500 text-[10px] block">03 // DESTINATION REPOSITORY</span>
+                      <span className="text-cyan-300 font-bold tracking-wide">
+                        github.com
+                      </span>
+                    </div>
+                    <span className="text-[10px] text-cyan-500 font-mono">PUBLIC PORTAL</span>
+                  </div>
+                </div>
+
+                <div className="text-[11px] text-slate-400 font-sans italic pt-1">
+                  &ldquo;We found an account, the password, and where we&apos;re supposed to go.&rdquo;
+                </div>
+              </div>
+
               <div className="pt-2">
                 <button
                   type="button"
@@ -433,7 +485,7 @@ export default function WinConditionCheckerPage() {
                   className="w-full flex items-center justify-center gap-2 py-3.5 px-6 bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-600 hover:border-emerald-400 text-emerald-200 hover:text-white rounded-lg font-bold text-xs uppercase tracking-widest transition-all shadow-lg shadow-emerald-950/50"
                 >
                   <RotateCcw className="h-4 w-4" />
-                  <span>PURGE SESSION STATE</span>
+                  <span>PURGE SESSION STATE &amp; RESTART</span>
                 </button>
               </div>
             </div>

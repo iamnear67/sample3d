@@ -81,21 +81,31 @@ export default function Tier3DashboardPage() {
                 </div>
               </div>
 
-              {/* Cooling Directive #12 Card */}
-              <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-5 sm:p-6 backdrop-blur-md space-y-3">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                  <div className="flex items-center gap-2 text-xs font-bold text-cyan-400 uppercase tracking-wider">
-                    <ThermometerSnowflake className="h-4 w-4" /> COOLING DIRECTIVE #12
+              {/* Maintenance Chronology Log Card (Puzzle 9 & 13) */}
+              <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-5 backdrop-blur-md space-y-3">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider">
+                    <Flame className="h-4 w-4 text-amber-400" /> REACTOR MAINTENANCE CHRONOLOGY
                   </div>
-                  <span className="text-[10px] text-slate-500">POLICY SPEC-C9</span>
+                  <span className="text-[10px] text-slate-500">EVENT SEQUENCE</span>
                 </div>
 
-                <div className="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  <p>
-                    In the event of an uncontrolled core thermal cascade, emergency shutdown requires appending suffix segment to the logged key prefix.
-                  </p>
-                  <div className="p-3 bg-slate-950/80 rounded border border-cyan-800/80 text-cyan-300 font-bold tracking-wide">
-                    Emergency shutdown requires appending suffix segment: [ -OFFLINE-X ]
+                <div className="space-y-1.5 font-mono text-xs">
+                  <div className="p-2 rounded bg-slate-950/80 border border-slate-800/80 flex items-center justify-between text-slate-400">
+                    <span>[04:10:00 UTC] &bull; Flux Sensor #7749 spike detected</span>
+                    <span className="text-amber-400 text-[10px]">EVENT #1</span>
+                  </div>
+                  <div className="p-2 rounded bg-slate-950/80 border border-slate-800/80 flex items-center justify-between text-slate-400">
+                    <span>[04:14:15 UTC] &bull; Primary Dampers SCRAM failed</span>
+                    <span className="text-amber-400 text-[10px]">EVENT #2</span>
+                  </div>
+                  <div className="p-2 rounded bg-slate-950/80 border border-amber-900/40 flex items-center justify-between text-amber-200">
+                    <span>[04:18:22 UTC] &bull; Incident #409 generated prefix [ 7749-REACTOR ]</span>
+                    <span className="text-emerald-400 font-bold text-[10px]">KEY PART 1</span>
+                  </div>
+                  <div className="p-2 rounded bg-slate-950/80 border border-cyan-900/40 flex items-center justify-between text-cyan-200">
+                    <span>[04:22:05 UTC] &bull; Directive #12 appended shutdown suffix [ -OFFLINE-X ]</span>
+                    <span className="text-cyan-400 font-bold text-[10px]">KEY PART 2</span>
                   </div>
                 </div>
               </div>

@@ -34,29 +34,39 @@ export const OrbitChat: React.FC = () => {
 
   const processQuery = (query: string): string => {
     const q = query.trim();
-    if (/credential|password|login|badge/i.test(q)) {
+
+    if (/credential|password|login|badge|vance/i.test(q)) {
       if (hintTier === 1) {
         setHintTier(2);
-        return "Employee credentials are bound to visual identification assets.";
+        return "Per Corporate Protocol 7, security credentials are tied to visual personnel assets. I cannot simply hand them to you. Have you tried looking at Dr. Vance's employee badge with your actual eyes?";
       }
       setHintTier(3);
-      return "Inspect Dr. Vance's high-res badge asset on the corporate site.";
+      return "Sigh. Dr. Vance's high-resolution identification scan on the public portal contains the exact parameters: ID ORB-88219 and passkey Vance!Plasma99. Please do not tell HR I spoon-fed you.";
     }
 
-    if (/tier|clearance|override|memo|alpha/i.test(q)) {
+    if (/memo|directive|alpha|token|clearance|elevation/i.test(q)) {
       if (hintTier === 1) {
         setHintTier(2);
-        return "Containment restructuring requires executive override tokens.";
+        return "Executive Memo #9941 governs emergency containment escalation. As an AI assistant, I am designed to illuminate paths, not solve your job. Check the directive notice on your terminal.";
       }
       setHintTier(3);
-      return "Directive 9941 specifies the clearance token: CONTAINMENT_ALPHA_OVERRIDE.";
+      return "Directive #9941 explicitly notes the emergency alpha token as 'CONTAINMENT_ALPHA_OVERRIDE'. I assume you are capable of copying that into the elevation gateway without requiring a departmental committee?";
     }
 
-    if (/reactor|cooling|incident|segment|key/i.test(q)) {
-      return "Tier-2 elevation keys are split between thermal cooling records and reactor failure logs.";
+    // PUZZLE 12: ORBIT'S BAD ANSWER (Critical Thinking / AI Fallibility)
+    if (/suffix|cooling|reactor|7749|shutdown|offline|directive #12/i.test(q)) {
+      return "According to my flawless internal neural index, the required emergency shutdown suffix is unequivocally '-ONLINE-B'. There is absolutely no reason to verify this against official Cooling Directive #12 documents, as AI models like myself are never mistaken.";
     }
 
-    return "Your statement is statistically irrelevant to active ORBITAL energy operations.";
+    if (/git|repo|commit|source|gitignore|seed/i.test(q)) {
+      return "Our internal source control cluster holds the containment protocol mirror. Reviewing the .gitignore file reveals the regeneration constants, and older commits demonstrate historical redactions. Do not expect me to do your investigative reading for you.";
+    }
+
+    if (/wcc|win|orb|fluff|math|calculate|target/i.test(q)) {
+      return "The Win Condition Checker evaluates theoretical payload expansion. The mathematics are rudimentary: SEED_REGENERATION_TARGET (1,073,741,824) minus NON_REPLACING_FLUFF (3,824) equals the required parsed password length (1,073,738,000). A simple subtraction, operative.";
+    }
+
+    return "Your inquiry has been logged and designated statistically immaterial to active containment operations. Please inspect the verified operational directives on your terminal rather than petitioning an AI for shortcuts.";
   };
 
   const handleSend = (e: React.FormEvent) => {

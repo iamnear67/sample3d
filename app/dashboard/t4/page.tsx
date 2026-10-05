@@ -83,9 +83,26 @@ export default function Tier4DashboardPage() {
                 </div>
               </div>
 
+              {/* Contradictory Memo #9928 Card (Puzzle 10) */}
+              <div className="bg-slate-900/40 border border-amber-900/40 rounded-xl p-4 sm:p-5 backdrop-blur-sm space-y-2">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-amber-400">
+                    <FileText className="h-4 w-4" />
+                    <span>PUBLIC RELATIONS MEMO #9928 // SUPERSEDED</span>
+                  </div>
+                  <span className="text-[10px] text-slate-500">DISAVOWED</span>
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  &ldquo;Internal memo to all staff: All emergency alpha override procedures have been decommissioned. Any rumor regarding a CONTAINMENT_ALPHA_OVERRIDE token is unfounded.&rdquo;
+                </p>
+                <div className="text-[11px] text-amber-300/80 font-mono">
+                  LOGICAL CONTRADICTION: Executive Directive #9941 above directly contradicts Memo #9928, confirming the Alpha override token is active and restricted.
+                </div>
+              </div>
+
               {/* Red Herring Facilities Card */}
               <div className="bg-slate-900/40 border border-slate-800/80 rounded-xl p-4 sm:p-5 backdrop-blur-sm space-y-2">
-                <div className="flex items-center gap-2 text-xs font-semibold text-amber-400">
+                <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
                   <Coffee className="h-4 w-4" />
                   <span>FACILITIES BULLETIN: WORKPLACE SAFETY</span>
                 </div>
