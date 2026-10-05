@@ -10,7 +10,23 @@ export interface StageGuardProps {
 }
 
 export const StageGuard: React.FC<StageGuardProps> = ({ stageNumber, children }) => {
-  const { unlockedStage, highestAccessibleRoute } = useGameState();
+  const { unlockedStage, highestAccessibleRoute, isHydrated } = useGameState();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || !isHydrated) {
+    return (
+      <div className="min-h-screen w-full bg-slate-950 text-slate-400 font-mono flex flex-col items-center justify-center p-4">
+        <div className="flex items-center gap-3">
+          <div className="h-4 w-4 rounded-full border-2 border-cyan-500 border-t-transparent animate-spin" />
+          <span className="text-xs uppercase tracking-widest text-slate-400">Verifying Security Clearance...</span>
+        </div>
+      </div>
+    );
+  }
 
   if (unlockedStage < stageNumber) {
     const authorizedStage = STAGE_ROUTES[unlockedStage];

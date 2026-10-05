@@ -18,7 +18,7 @@ import { OrbitChat } from "../../../components/OrbitChat";
 
 export default function Tier4DashboardPage() {
   const router = useRouter();
-  const { unlockNextStage } = useGameState();
+  const { unlockNextStage, currentUser } = useGameState();
 
   const [tokenInput, setTokenInput] = useState<string>("");
   const [submissionStatus, setSubmissionStatus] = useState<"idle" | "error" | "success">("idle");
@@ -46,7 +46,9 @@ export default function Tier4DashboardPage() {
               <div className="h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse" />
               <div className="text-xs sm:text-sm font-bold tracking-wider text-slate-200 flex items-center gap-2">
                 <UserCheck className="h-4 w-4 text-cyan-400" />
-                <span>LOGGED IN: DR. A. VANCE // CLEARANCE: TIER-4</span>
+                <span>
+                  LOGGED IN: {currentUser ? `${currentUser.name.toUpperCase()} (${currentUser.id})` : "SOLOMON HIGGS (@solomonhiggs)"} // CLEARANCE: TIER-4
+                </span>
               </div>
             </div>
             <div className="flex items-center gap-2 text-xs text-slate-400">

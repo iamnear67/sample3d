@@ -19,9 +19,15 @@ export default function ProjectorCluePage() {
   const router = useRouter();
   const { unlockNextStage } = useGameState();
   const [currentTime, setCurrentTime] = useState<string>("00:00:00 UTC");
+  const [vectorUrl, setVectorUrl] = useState<string>("http://localhost:1001/rebel");
   const [connecting, setConnecting] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
+    setMounted(true);
+    if (typeof window !== "undefined") {
+      setVectorUrl(`${window.location.origin}/rebel`);
+    }
     const updateTime = () => {
       const now = new Date();
       setCurrentTime(
@@ -176,7 +182,7 @@ export default function ProjectorCluePage() {
                 className="cursor-pointer inline-flex items-center gap-3 bg-slate-950/80 border border-slate-700/80 hover:border-cyan-500/80 rounded-lg px-4 py-2.5 transition-all text-sm sm:text-lg font-bold text-cyan-300 hover:text-cyan-200"
               >
                 <Terminal className="h-5 w-5 text-cyan-400 shrink-0" />
-                <span className="tracking-wide">INFILTRATION VECTOR: http://192.168.1.100:3000/rebel</span>
+                <span className="tracking-wide">INFILTRATION VECTOR: {vectorUrl}</span>
               </div>
               <p className="text-xs text-slate-400">
                 Connect your operative portable device to this node or trigger the manual gateway override.

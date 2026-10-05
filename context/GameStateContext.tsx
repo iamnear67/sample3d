@@ -33,6 +33,12 @@ export const MAX_STAGE = 9;
 
 export type ClassLevel = "3-5" | "6-8" | "9-12";
 
+export interface UserProfile {
+  id: string;
+  name: string;
+  clearance: string;
+}
+
 export interface GameStateContextValue {
   unlockedStage: number;
   completedStages: number[];
@@ -45,6 +51,9 @@ export interface GameStateContextValue {
   resetGame: () => void;
   addPenaltyTime: (seconds: number) => void;
   highestAccessibleRoute: string;
+  isHydrated: boolean;
+  currentUser: UserProfile | null;
+  setCurrentUser: (user: UserProfile | null) => void;
 }
 
 const STORAGE_KEY = "orbital_eclipse_protocol_state_v1";
@@ -54,6 +63,7 @@ interface SerializedState {
   completedStages: number[];
   penaltyTimeSec: number;
   classLevel?: ClassLevel;
+  currentUser?: UserProfile | null;
 }
 
 const DEFAULT_STATE: SerializedState = {
@@ -61,6 +71,7 @@ const DEFAULT_STATE: SerializedState = {
   completedStages: [],
   penaltyTimeSec: 0,
   classLevel: "6-8",
+  currentUser: null,
 };
 
 const GameStateContext = createContext<GameStateContextValue | undefined>(undefined);
@@ -74,6 +85,7 @@ export const GameStateProvider: React.FC<GameStateProviderProps> = ({ children }
   const [completedStages, setCompletedStages] = useState<number[]>(DEFAULT_STATE.completedStages);
   const [penaltyTimeSec, setPenaltyTimeSec] = useState<number>(DEFAULT_STATE.penaltyTimeSec);
   const [classLevel, setClassLevel] = useState<ClassLevel>(DEFAULT_STATE.classLevel ?? "6-8");
+  const [currentUser, setCurrentUser] = useState<UserProfile | null>(DEFAULT_STATE.currentUser ?? null);
   const [isTeacherNoteOpen, setIsTeacherNoteOpen] = useState<boolean>(false);
   const [isHydrated, setIsHydrated] = useState<boolean>(false);
 
@@ -95,6 +107,9 @@ export const GameStateProvider: React.FC<GameStateProviderProps> = ({ children }
         if (parsed.classLevel && ["3-5", "6-8", "9-12"].includes(parsed.classLevel)) {
           setClassLevel(parsed.classLevel);
         }
+        if (parsed.currentUser) {
+          setCurrentUser(parsed.currentUser);
+        }
       }
     } catch (err) {
       console.warn("[ORBITAL Protocol] Failed to parse local game state:", err);
@@ -112,12 +127,13 @@ export const GameStateProvider: React.FC<GameStateProviderProps> = ({ children }
         completedStages,
         penaltyTimeSec,
         classLevel,
+        currentUser,
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
     } catch (err) {
       console.warn("[ORBITAL Protocol] Failed to persist game state:", err);
     }
-  }, [unlockedStage, completedStages, penaltyTimeSec, classLevel, isHydrated]);
+  }, [unlockedStage, completedStages, penaltyTimeSec, classLevel, currentUser, isHydrated]);
 
   const unlockNextStage = useCallback((stageIndex: number) => {
     setCompletedStages((prev) => (prev.includes(stageIndex) ? prev : [...prev, stageIndex]));
@@ -136,6 +152,7 @@ export const GameStateProvider: React.FC<GameStateProviderProps> = ({ children }
     setCompletedStages(DEFAULT_STATE.completedStages);
     setPenaltyTimeSec(DEFAULT_STATE.penaltyTimeSec);
     setClassLevel(DEFAULT_STATE.classLevel ?? "6-8");
+    setCurrentUser(null);
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch (err) {
@@ -160,6 +177,9 @@ export const GameStateProvider: React.FC<GameStateProviderProps> = ({ children }
       resetGame,
       addPenaltyTime,
       highestAccessibleRoute,
+      isHydrated,
+      currentUser,
+      setCurrentUser,
     }),
     [
       unlockedStage,

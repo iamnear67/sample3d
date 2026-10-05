@@ -50,33 +50,34 @@ const STAGE_GUIDES: Record<number, TeacherGuideData> = {
     },
   },
   3: {
-    title: "STAGE 3: Orbital Corporate Portal & Personnel Directory",
-    objective: "Identify the lead engineer connected to Project ECLIPSE and extract his authentication credentials.",
-    howToSolve: `1. Review the 'Employee Recognition' section: Dr. Alistair Vance is honored as Lead Containment Architect for Project ECLIPSE.
-2. Click 'INSPECT HIGH-RES SECURITY BADGE' to view the security asset and copy:
-   Employee ID: ORB-88219
-   Passkey: Vance!Plasma99
-3. In the Directory & Records tab, cross-reference his security clearance and note any audit discrepancies.`,
-    expectedAnswer: "Employee ID: ORB-88219 // Passkey: Vance!Plasma99",
+    title: "STAGE 3: Orbital Corporate Public Website & Star Employee",
+    objective: "Explore the public corporate website, locate Star Employee Solomon Higgs, and extract his Tier-4 authentication credentials.",
+    howToSolve: `1. Browse the corporate website (Home, About Us, Our Solutions, Star Employee, Contact).
+2. Go to the 'Star Employee' section featuring Solomon Higgs with Tier-4 clearance.
+3. Extract his intranet credentials:
+   Employee ID: @solomonhiggs
+   Password: @fryit123
+4. Click 'Authenticate Solomon Higgs In Employee Login' or navigate to /auth/login.`,
+    expectedAnswer: "Employee ID: @solomonhiggs // Password: @fryit123",
     nextStep: "Proceed to Stage 4: Authentication Gateway (/auth/login).",
-    hint: "Look at Dr. Vance's employee badge modal. The asset parameters are listed below the badge photo.",
+    hint: "Check the 'Star Employee' spotlight section on the public corporate site to find Solomon Higgs' picture and credentials.",
     ageGuidance: {
-      "3-5": "Click on 'Inspect High-Res Security Badge' and look at the text box that appears.",
-      "6-8": "Compare employee names in the directory and find who is assigned to Project ECLIPSE.",
-      "9-12": "Analyze the personnel directory records for discrepancies in containment clearance.",
+      "3-5": "Click 'Star Employee' in the top bar to see Solomon Higgs' picture and copy his credentials.",
+      "6-8": "Locate the Star Employee section and copy the Employee ID and password shown in the card.",
+      "9-12": "Inspect the Star Employee spotlight card to retrieve Tier-4 login credentials.",
     },
   },
   4: {
     title: "STAGE 4: Orbital Authentication Gateway",
-    objective: "Authenticate into the secured corporate intranet using Dr. Vance's credentials.",
-    howToSolve: "Enter Employee ID 'ORB-88219' and Access Passphrase 'Vance!Plasma99' into the login form.",
-    expectedAnswer: "ID: ORB-88219, Passphrase: Vance!Plasma99",
+    objective: "Authenticate into the secured corporate intranet using Solomon Higgs' Tier-4 credentials.",
+    howToSolve: "Enter Employee ID '@solomonhiggs' and Access Passphrase '@fryit123' into the login form.",
+    expectedAnswer: "ID: @solomonhiggs, Password: @fryit123",
     nextStep: "Proceed to Stage 5: Tier-4 Intranet & O.R.B.I.T. (/dashboard/t4).",
-    hint: "Use the credentials discovered on Dr. Vance's security badge in the previous stage.",
+    hint: "Use the credentials discovered on Solomon Higgs' Star Employee spotlight in the previous stage.",
     ageGuidance: {
-      "3-5": "Help students paste or type the exact credentials copied from the badge.",
-      "6-8": "Ensure students match case sensitivity and punctuation: 'Vance!Plasma99'.",
-      "9-12": "Remind students that standard corporate gateways require exact identifier formatting.",
+      "3-5": "Paste or type @solomonhiggs and @fryit123 into the login box.",
+      "6-8": "Ensure exact formatting with the '@' symbol: '@solomonhiggs' and '@fryit123'.",
+      "9-12": "Verify the credential format and submit to escalate clearance to Tier 4.",
     },
   },
   5: {

@@ -35,13 +35,13 @@ export const OrbitChat: React.FC = () => {
   const processQuery = (query: string): string => {
     const q = query.trim();
 
-    if (/credential|password|login|badge|vance/i.test(q)) {
+    if (/credential|password|login|badge|vance|solomon|higgs/i.test(q)) {
       if (hintTier === 1) {
         setHintTier(2);
-        return "Per Corporate Protocol 7, security credentials are tied to visual personnel assets. I cannot simply hand them to you. Have you tried looking at Dr. Vance's employee badge with your actual eyes?";
+        return "Per Corporate Protocol 7, security credentials are tied to visual personnel assets. Check the Star Employee spotlight on the public corporate site for Solomon Higgs' badge parameters.";
       }
       setHintTier(3);
-      return "Sigh. Dr. Vance's high-resolution identification scan on the public portal contains the exact parameters: ID ORB-88219 and passkey Vance!Plasma99. Please do not tell HR I spoon-fed you.";
+      return "Sigh. Solomon Higgs' high-resolution identification spotlight on the public portal lists the exact parameters: Employee ID @solomonhiggs and passphrase @fryit123. Please do not tell HR I spoon-fed you.";
     }
 
     if (/memo|directive|alpha|token|clearance|elevation/i.test(q)) {

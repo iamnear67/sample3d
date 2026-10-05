@@ -33,7 +33,8 @@ export default function RebelTerminalPage() {
 
   const handleAccessSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (accessPassword.trim() === "127.0.0.1") {
+    const clean = accessPassword.trim();
+    if (clean === "127.0.0.1" || clean === "PASSWORD - 127.0.0.1" || clean.includes("127.0.0.1")) {
       setAuthSuccess(true);
       setAuthError(null);
       unlockNextStage(3);
@@ -170,14 +171,10 @@ pause`;
                     <strong className="text-emerald-400 font-mono text-base italic underline">4</strong> containment dampers have already failed in sequence, leaving the central core hovering near critical thermal resonance.{" "}
                     <strong className="text-emerald-400 font-mono text-base">L</strong>ead systems architect Dr. Vance attempted to alert regional safety oversight, but corporate administrators revoked his external transmission rights.{" "}
                     <strong className="text-emerald-400 font-mono text-base">O</strong>nly an internal network bridge can now pierce the automated firewall ring before total core meltdown begins.
-                  </p>
-
-                  {/* Hidden Text Clue: Same color as background card (invisible unless highlighted / selected) */}
-                  <div className="p-2 rounded bg-slate-900/90 border border-slate-800/40 select-all my-2">
-                    <span className="text-slate-900 select-all font-mono text-xs font-black tracking-widest selection:bg-emerald-500 selection:text-slate-950">
-                      PASSWORD - 127.0.0.1
+                    <span className="text-transparent selection:text-slate-950 selection:bg-emerald-400 text-[8px] font-mono select-all ml-1 cursor-default tracking-tight">
+                      127.0.0.1
                     </span>
-                  </div>
+                  </p>
 
                   <p>
                     <strong className="text-emerald-400 font-mono text-base">C</strong>landestine relay nodes scattered across the facility offer the last surviving diagnostic telemetry.{" "}
@@ -370,7 +367,7 @@ pause`}
                   Input the discovered loopback ingress authorization address:
                 </p>
                 <p className="text-[11px] text-slate-400">
-                  Reference: Hidden article clue or IPv4 localhost sentence extraction.
+                  Reference: Decrypted clandestine dispatch stream.
                 </p>
               </div>
 
@@ -397,7 +394,7 @@ pause`}
                     type="text"
                     value={accessPassword}
                     onChange={(e) => setAccessPassword(e.target.value)}
-                    placeholder="e.g. 127.0.0.1"
+                    placeholder=""
                     autoFocus
                     required
                     className="w-full bg-slate-950 border border-slate-800 rounded px-3.5 py-2.5 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500 font-mono tracking-wider"
