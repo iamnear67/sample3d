@@ -345,7 +345,7 @@ pause`}
         {/* Modal: ACCESS PROJECT ECLIPSE Password Input */}
         {passwordModalOpen && (
           <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="bg-slate-900 border border-emerald-700/80 rounded-xl max-w-md w-full p-6 space-y-5 shadow-2xl relative animate-in fade-in zoom-in-95 duration-150">
+            <div className="bg-slate-900 border border-emerald-700/80 rounded-xl max-w-md w-full p-6 space-y-5 relative animate-in fade-in zoom-in-95 duration-150">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                 <div className="flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-wider">
                   <Lock className="h-4 w-4" /> PROJECT ECLIPSE // INGRESS GATEWAY
@@ -397,7 +397,7 @@ pause`}
                     placeholder=""
                     autoFocus
                     required
-                    className="w-full bg-slate-950 border border-slate-800 rounded px-3.5 py-2.5 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500 font-mono tracking-wider"
+                    className="w-full bg-slate-950 border border-slate-800 rounded px-3.5 py-2.5 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none focus:ring-0 focus:border-emerald-500 font-mono tracking-wider shadow-none"
                   />
                 </div>
 

@@ -425,16 +425,14 @@ export default function OrbitalPublicPage() {
             </div>
 
             {/* Featured Star Employee Showcase Card */}
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-950 border-2 border-cyan-500/60 rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur-md relative overflow-hidden">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-950 border-2 border-cyan-500/60 rounded-2xl p-6 sm:p-10 backdrop-blur-md relative overflow-hidden">
               <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
                 {/* Employee Picture Column */}
                 <div className="md:col-span-5 flex flex-col items-center">
                   <div className="relative group">
-                    {/* Glowing Picture Frame */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-amber-400 to-blue-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300" />
-                    <div className="relative h-64 w-64 rounded-xl overflow-hidden border-2 border-cyan-400 bg-slate-900 shadow-2xl">
+                    <div className="relative h-64 w-64 rounded-xl overflow-hidden border-2 border-cyan-400 bg-slate-900">
                       <Image
                         src="/images/solomon-higgs.jpg"
                         alt="Solomon Higgs - Star Employee"
@@ -447,7 +445,7 @@ export default function OrbitalPublicPage() {
                   </div>
 
                   {/* Verification Tag */}
-                  <div className="mt-4 flex items-center gap-2 bg-slate-900/90 border border-emerald-500/80 px-3 py-1.5 rounded-full text-xs font-semibold text-emerald-400 shadow">
+                  <div className="mt-4 flex items-center gap-2 bg-slate-900/90 border border-emerald-500/80 px-3 py-1.5 rounded-full text-xs font-semibold text-emerald-400">
                     <CheckCircle2 className="h-4 w-4" />
                     <span>Verified Tier 4 Active Employee</span>
                   </div>
@@ -472,7 +470,7 @@ export default function OrbitalPublicPage() {
                   </p>
 
                   {/* High Security Credentials Card */}
-                  <div className="bg-slate-950/90 border border-cyan-900/80 rounded-xl p-4 sm:p-5 space-y-3 shadow-inner">
+                  <div className="bg-slate-950/90 border border-cyan-900/80 rounded-xl p-4 sm:p-5 space-y-3">
                     <div className="flex items-center justify-between border-b border-slate-800 pb-2">
                       <div className="flex items-center gap-2 text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">
                         <KeyRound className="h-4 w-4" /> Intranet Access Parameters
@@ -521,7 +519,7 @@ export default function OrbitalPublicPage() {
                   <div className="pt-2">
                     <Link
                       href="/auth/login"
-                      className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-cyan-600/30 transition-all group"
+                      className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider transition-all group"
                     >
                       <Lock className="h-4 w-4" />
                       <span>Authenticate Solomon Higgs In Employee Login &rarr;</span>

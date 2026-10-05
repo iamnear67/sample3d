@@ -45,7 +45,7 @@ export default function LoginPage() {
   return (
     <StageGuard stageNumber={4}>
       <main className="min-h-screen w-full bg-slate-950 text-slate-100 font-mono flex items-center justify-center p-4">
-        <div className="w-full max-w-md bg-slate-900/70 border border-slate-800 rounded-xl p-6 sm:p-8 shadow-2xl backdrop-blur-md space-y-6">
+        <div className="w-full max-w-md bg-slate-900/70 border border-slate-800 rounded-xl p-6 sm:p-8 backdrop-blur-md space-y-6">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <Link
               href="/orbital"
@@ -60,7 +60,7 @@ export default function LoginPage() {
           </div>
 
           <div className="text-center space-y-1">
-            <div className="inline-flex p-3 rounded-xl bg-cyan-950/80 border border-cyan-800 text-cyan-400 mb-2 shadow-lg shadow-cyan-950/50">
+            <div className="inline-flex p-3 rounded-xl bg-cyan-950/80 border border-cyan-800 text-cyan-400 mb-2">
               <Lock className="h-6 w-6" />
             </div>
             <h1 className="text-lg font-bold tracking-wider text-slate-100">ORBITAL CO. // AUTH GATEWAY</h1>
@@ -90,7 +90,7 @@ export default function LoginPage() {
                 onChange={(e) => setEmployeeId(e.target.value)}
                 placeholder="@solomonhiggs"
                 required
-                className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-cyan-500 placeholder:text-slate-600 font-mono"
+                className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 focus:outline-none focus:ring-0 focus:border-cyan-500 placeholder:text-slate-600 font-mono shadow-none"
               />
             </div>
 
@@ -103,7 +103,7 @@ export default function LoginPage() {
                   onChange={(e) => setPassphrase(e.target.value)}
                   placeholder="@fryit123"
                   required
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-cyan-500 placeholder:text-slate-600 pr-10 font-mono"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 focus:outline-none focus:ring-0 focus:border-cyan-500 placeholder:text-slate-600 pr-10 font-mono shadow-none"
                 />
                 <button
                   type="button"
@@ -118,7 +118,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={status === "success"}
-              className="w-full py-3 px-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-slate-950 font-black text-xs uppercase tracking-wider rounded-lg transition-all shadow-md shadow-cyan-600/30 disabled:opacity-50"
+              className="w-full py-3 px-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-slate-950 font-black text-xs uppercase tracking-wider rounded-lg transition-all disabled:opacity-50"
             >
               AUTHENTICATE PERSONNEL &rarr;
             </button>
